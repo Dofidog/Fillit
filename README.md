@@ -6,44 +6,84 @@ This program was made by me and my project-partner jHimanen.
 example file with three tetriminos:
 
 ..#.
-.##.
-..#.
-....
 
 .##.
+
+..#.
+
+....
+
+
+
+
+.##.
+
 .#..
+
 .#..
+
+....
+
+
+
 ....
 
 ....
-....
+
 ..#.
+
 .###
 
-#...
-#...
-#...
+
+
+
 #...
 
+#...
+
+#...
+
+#...
+
+
+
 which results in:
+
 BBAD
+
 BAAD
+
 BCAD
+
 CCCD
 
 invalid examples:
 
 ....
+
 ....
+
 ....
+
 ....
+
+
 
 .##.
-....
-....
+
 ....
 
+....
+
+....
+
+
+
 #...
+
 .#..
+
 ..#.
+
 ...#
+
