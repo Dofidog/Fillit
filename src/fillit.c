@@ -12,6 +12,13 @@
 
 #include "fillit.h"
 
+int	ft_isupper(int c)
+{
+	if (c <= 'Z' && c >= 'A')
+		return (1);
+	return (0);
+}
+
 static void	delete_mino(t_map *map, int t)
 {
 	int x;
