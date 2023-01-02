@@ -3,18 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jhimanen <jhimanen@student.hive.fi>        +#+  +:+       +#+         #
+#    By: tpaaso <tpaaso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/01/21 18:23:34 by jhimanen          #+#    #+#              #
-#    Updated: 2020/01/21 19:29:05 by jhimanen         ###   ########.fr        #
+#    Created: 2022/01/20 14:25:27 by tpaaso            #+#    #+#              #
+#    Updated: 2023/01/02 12:08:26 by tpaaso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 
-SRCS = libft/libft.a src/main.c src/fillit.c src/validator.c src/prototypes.c
-
-OBJECT = $(SRC:.c=.o)
+SRCS = libft/libft.a src/main.c src/find.c src/validate.c src/map.c
 
 LIBFT = libft/
 
@@ -24,14 +22,17 @@ all: $(NAME)
 
 $(NAME): $(OBJECT)
 	@make -C $(LIBFT)
-	@gcc -Wall -Wextra -Werror -o $(NAME) $(OBJECT) $(SRCS)
+	@gcc -Wall -Wextra -Werror -o $(NAME) $(SRCS) -I $(LIBFT)
 
 clean:
+	@make  clean -C $(LIBFT)
 	@/bin/rm -f $(OBJECT)
 	@make -C $(LIBFT) clean
 
 fclean: clean
+	@make  fclean -C $(LIBFT)
 	@/bin/rm -f $(NAME)
 	@make -C $(LIBFT) fclean
 
 re: fclean all
+
